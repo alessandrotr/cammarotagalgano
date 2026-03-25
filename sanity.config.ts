@@ -31,7 +31,6 @@ export default defineConfig({
             S.documentTypeListItem("service").title("Servizi"),
             S.documentTypeListItem("post").title("Blog"),
             S.documentTypeListItem("teamMember").title("Professionisti"),
-            S.documentTypeListItem("testimonial").title("Testimonianze"),
             S.documentTypeListItem("faq").title("FAQ"),
           ]),
     }),

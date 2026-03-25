@@ -79,14 +79,6 @@ export interface ImageGallerySection {
   layout?: "grid" | "carousel";
 }
 
-export interface TestimonialsSection {
-  _type: "testimonials";
-  _key: string;
-  heading?: string;
-  testimonials?: Testimonial[];
-  style?: "carousel" | "grid";
-}
-
 export interface CtaSection {
   _type: "cta";
   _key: string;
@@ -136,7 +128,6 @@ export type Section =
   | ContentBlockSection
   | ServicesGridSection
   | ImageGallerySection
-  | TestimonialsSection
   | CtaSection
   | ContactSectionType
   | FaqSectionType
@@ -186,15 +177,6 @@ export interface TeamMember {
   phone?: string;
   linkedin?: string;
   order?: number;
-}
-
-export interface Testimonial {
-  _id: string;
-  name: string;
-  company?: string;
-  quote: string;
-  rating?: number;
-  photo?: SanityImage;
 }
 
 export interface FAQ {

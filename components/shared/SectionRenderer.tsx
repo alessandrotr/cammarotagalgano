@@ -3,7 +3,6 @@ import Hero from "@/components/sections/Hero";
 import ContentBlock from "@/components/sections/ContentBlock";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ImageGallery from "@/components/sections/ImageGallery";
-import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import ContactSection from "@/components/sections/ContactSection";
 import FAQ from "@/components/sections/FAQ";
@@ -15,7 +14,6 @@ const sectionComponents: Record<string, React.ComponentType<any>> = {
   contentBlock: ContentBlock,
   servicesGrid: ServicesGrid,
   imageGallery: ImageGallery,
-  testimonials: Testimonials,
   cta: CTA,
   contactSection: ContactSection,
   faqSection: FAQ,

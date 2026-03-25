@@ -3,7 +3,6 @@ import hero from "./objects/hero";
 import contentBlock from "./objects/contentBlock";
 import servicesGrid from "./objects/servicesGrid";
 import imageGallery from "./objects/imageGallery";
-import testimonials from "./objects/testimonials";
 import cta from "./objects/cta";
 import contactSection from "./objects/contactSection";
 import faqSection from "./objects/faqSection";
@@ -15,7 +14,6 @@ import page from "./documents/page";
 import service from "./documents/service";
 import post from "./documents/post";
 import teamMember from "./documents/teamMember";
-import testimonial from "./documents/testimonial";
 import faq from "./documents/faq";
 
 export const schemaTypes = [
@@ -25,7 +23,6 @@ export const schemaTypes = [
   contentBlock,
   servicesGrid,
   imageGallery,
-  testimonials,
   cta,
   contactSection,
   faqSection,
@@ -37,6 +34,5 @@ export const schemaTypes = [
   service,
   post,
   teamMember,
-  testimonial,
   faq,
 ];

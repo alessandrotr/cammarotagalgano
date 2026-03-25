@@ -3,7 +3,6 @@
 import Hero from "@/components/sections/Hero";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import Stats from "@/components/sections/Stats";
-import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import ContactSection from "@/components/sections/ContactSection";
 
@@ -50,33 +49,6 @@ const placeholderServices = [
   },
 ];
 
-const placeholderTestimonials = [
-  {
-    _id: "t1",
-    name: "Marco Esposito",
-    company: "Esposito Costruzioni S.r.l.",
-    quote:
-      "Da oltre 10 anni ci affidiamo allo Studio Cammarota Galgano. La loro competenza e professionalità sono impareggiabili. Hanno guidato la nostra azienda attraverso ogni fase di crescita.",
-    rating: 5,
-  },
-  {
-    _id: "t2",
-    name: "Laura Ferretti",
-    company: "Ferretti Design Studio",
-    quote:
-      "Professionisti seri e sempre aggiornati. Mi hanno aiutata con la pianificazione fiscale e la gestione societaria, risolvendo problematiche complesse con efficienza e chiarezza.",
-    rating: 5,
-  },
-  {
-    _id: "t3",
-    name: "Giovanni De Luca",
-    company: "De Luca & Partners",
-    quote:
-      "Un punto di riferimento a Napoli. La loro consulenza tributaria ci ha permesso di ottimizzare significativamente il carico fiscale, sempre nel pieno rispetto della normativa.",
-    rating: 5,
-  },
-];
-
 export default function FallbackHome() {
   return (
     <>
@@ -109,14 +81,6 @@ export default function FallbackHome() {
           { number: "1992", label: "Anno di Fondazione" },
         ]}
         backgroundColor="navy"
-      />
-
-      <Testimonials
-        _type="testimonials"
-        _key="testimonials"
-        heading="Cosa Dicono i Nostri Clienti"
-        testimonials={placeholderTestimonials}
-        style="carousel"
       />
 
       <CTA

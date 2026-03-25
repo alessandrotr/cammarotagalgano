@@ -71,7 +71,7 @@ types/             # TypeScript interfaces
 
 | Pagina | Route | Descrizione |
 |--------|-------|-------------|
-| Home | `/` | Hero, servizi, stats, testimonianze, CTA, contatti |
+| Home | `/` | Hero, servizi, stats, CTA, contatti |
 | Servizi | `/servizi` | Lista di tutti i servizi |
 | Servizio | `/servizi/[slug]` | Dettaglio singolo servizio |
 | Professionisti | `/professionisti` | Team dello studio |

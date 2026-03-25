@@ -42,7 +42,7 @@ export default defineType({
         { type: "contentBlock" },
         { type: "servicesGrid" },
         { type: "imageGallery" },
-        { type: "testimonials" },
+
         { type: "cta" },
         { type: "contactSection" },
         { type: "faqSection" },
