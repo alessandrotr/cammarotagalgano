@@ -1,7 +1,8 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { pageBySlugQuery } from "@/sanity/queries/page";
+import { settingsQuery } from "@/sanity/queries/settings";
 import SectionRenderer from "@/components/shared/SectionRenderer";
-import type { Page, Section } from "@/types/sanity";
+import type { Page, SiteSettings } from "@/types/sanity";
 import FallbackHome from "./FallbackHome";
 
 export default async function HomePage() {
@@ -15,5 +16,17 @@ export default async function HomePage() {
     return <SectionRenderer sections={page.sections} />;
   }
 
-  return <FallbackHome />;
+  const settings = await sanityFetch<SiteSettings>({
+    query: settingsQuery,
+    tags: ["siteSettings"],
+  });
+
+  return (
+    <FallbackHome
+      sitePhone={settings?.phone}
+      siteEmail={settings?.email}
+      siteAddress={settings?.address}
+      sitePec={settings?.pec}
+    />
+  );
 }

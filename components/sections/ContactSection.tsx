@@ -10,6 +10,10 @@ export default function ContactSection({
   subheading,
   showMap = true,
   showForm = true,
+  sitePhone,
+  siteEmail,
+  siteAddress,
+  sitePec,
 }: ContactSectionType) {
   const [formData, setFormData] = useState({
     name: "",
@@ -152,7 +156,7 @@ export default function ContactSection({
                 </svg>
                 <div>
                   <p className="font-semibold text-blue-dark">Indirizzo</p>
-                  <p className="text-text-secondary">Via Toledo, 424 — 80134 Napoli (NA)</p>
+                  <p className="text-text-secondary">{siteAddress || "Via Toledo, 424 — 80134 Napoli (NA)"}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -161,7 +165,18 @@ export default function ContactSection({
                 </svg>
                 <div>
                   <p className="font-semibold text-blue-dark">Telefono</p>
-                  <p className="text-text-secondary">+39 081 XXX XXXX</p>
+                  <p className="text-text-secondary">
+                    {sitePhone
+                      ? sitePhone.split(/\s*-\s*/).map((num, i, arr) => (
+                          <span key={num}>
+                            <a href={`tel:${num.replace(/\s/g, "")}`} className="hover:text-orange transition-colors">
+                              {num.trim()}
+                            </a>
+                            {i < arr.length - 1 && " — "}
+                          </span>
+                        ))
+                      : "+39 081 XXX XXXX"}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -170,7 +185,11 @@ export default function ContactSection({
                 </svg>
                 <div>
                   <p className="font-semibold text-blue-dark">Email</p>
-                  <p className="text-text-secondary">info@cammarotagalgano.it</p>
+                  <p className="text-text-secondary">
+                    <a href={`mailto:${siteEmail || "info@cammarotagalgano.it"}`} className="hover:text-orange transition-colors">
+                      {siteEmail || "info@cammarotagalgano.it"}
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -179,7 +198,7 @@ export default function ContactSection({
                 </svg>
                 <div>
                   <p className="font-semibold text-blue-dark">PEC</p>
-                  <p className="text-text-secondary">studio@pec.cammarotagalgano.it</p>
+                  <p className="text-text-secondary">{sitePec || "studio@pec.cammarotagalgano.it"}</p>
                 </div>
               </div>
             </div>

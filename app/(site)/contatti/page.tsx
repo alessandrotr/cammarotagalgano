@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import type { SiteSettings } from "@/types/sanity";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { settingsQuery } from "@/sanity/queries/settings";
 import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
@@ -7,7 +10,12 @@ export const metadata: Metadata = {
     "Contatta lo Studio Associato Cammarota Galgano a Napoli. Richiedi una consulenza fiscale, contabile o societaria.",
 };
 
-export default function ContattiPage() {
+export default async function ContattiPage() {
+  const settings = await sanityFetch<SiteSettings>({
+    query: settingsQuery,
+    tags: ["siteSettings"],
+  });
+
   return (
     <>
       <section className="bg-blue-dark pt-32 pb-20">
@@ -27,6 +35,10 @@ export default function ContattiPage() {
         heading=""
         showMap={true}
         showForm={true}
+        sitePhone={settings?.phone}
+        siteEmail={settings?.email}
+        siteAddress={settings?.address}
+        sitePec={settings?.pec}
       />
     </>
   );

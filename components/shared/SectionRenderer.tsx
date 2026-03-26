@@ -1,4 +1,6 @@
-import type { Section } from "@/types/sanity";
+import type { Section, SiteSettings } from "@/types/sanity";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { settingsQuery } from "@/sanity/queries/settings";
 import Hero from "@/components/sections/Hero";
 import ContentBlock from "@/components/sections/ContentBlock";
 import ServicesGrid from "@/components/sections/ServicesGrid";
@@ -25,15 +27,29 @@ interface SectionRendererProps {
   sections?: Section[];
 }
 
-export default function SectionRenderer({ sections }: SectionRendererProps) {
+export default async function SectionRenderer({ sections }: SectionRendererProps) {
   if (!sections?.length) return null;
+
+  const hasContactSection = sections.some((s) => s._type === "contactSection");
+  const settings = hasContactSection
+    ? await sanityFetch<SiteSettings>({ query: settingsQuery, tags: ["siteSettings"] })
+    : null;
 
   return (
     <>
       {sections.map((section) => {
         const Component = sectionComponents[section._type];
         if (!Component) return null;
-        return <Component key={section._key} {...section} />;
+        const extraProps =
+          section._type === "contactSection" && settings
+            ? {
+                sitePhone: settings.phone,
+                siteEmail: settings.email,
+                siteAddress: settings.address,
+                sitePec: settings.pec,
+              }
+            : {};
+        return <Component key={section._key} {...section} {...extraProps} />;
       })}
     </>
   );

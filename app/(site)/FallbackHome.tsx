@@ -49,7 +49,14 @@ const placeholderServices = [
   },
 ];
 
-export default function FallbackHome() {
+interface FallbackHomeProps {
+  sitePhone?: string;
+  siteEmail?: string;
+  siteAddress?: string;
+  sitePec?: string;
+}
+
+export default function FallbackHome({ sitePhone, siteEmail, siteAddress, sitePec }: FallbackHomeProps) {
   return (
     <>
       <Hero
@@ -100,6 +107,10 @@ export default function FallbackHome() {
         subheading="Siamo a tua disposizione per qualsiasi domanda o richiesta di informazioni"
         showMap={true}
         showForm={true}
+        sitePhone={sitePhone}
+        siteEmail={siteEmail}
+        siteAddress={siteAddress}
+        sitePec={sitePec}
       />
     </>
   );

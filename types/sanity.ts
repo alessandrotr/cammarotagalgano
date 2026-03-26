@@ -97,6 +97,10 @@ export interface ContactSectionType {
   showMap?: boolean;
   showForm?: boolean;
   calendlyUrl?: string;
+  sitePhone?: string;
+  siteEmail?: string;
+  siteAddress?: string;
+  sitePec?: string;
 }
 
 export interface FaqSectionType {
