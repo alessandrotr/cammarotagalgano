@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/servizi", label: "Servizi" },
   { href: "/professionisti", label: "Professionisti" },
   { href: "/chi-siamo", label: "Chi Siamo" },
-  { href: "/blog", label: "Blog" },
+  { href: "/news", label: "News" },
   { href: "/contatti", label: "Contatti" },
 ];
 
@@ -74,12 +74,11 @@ export default function Header() {
                 className={cn(
                   "text-sm font-medium transition-colors relative",
                   pathname === link.href
-                    ? scrolled ? "text-orange" : "text-white font-semibold"
+                    ? "text-orange"
                     : scrolled
                     ? "text-text-secondary hover:text-blue-dark"
                     : "text-white/80 hover:text-white",
-                  "after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all hover:after:w-full",
-                  scrolled ? "after:bg-orange" : "after:bg-white",
+                  "after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-orange after:transition-all hover:after:w-full",
                   pathname === link.href && "after:w-full"
                 )}
               >

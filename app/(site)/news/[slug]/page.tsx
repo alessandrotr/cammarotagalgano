@@ -50,10 +50,10 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="bg-blue-dark pt-32 pb-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link
-            href="/blog"
+            href="/news"
             className="text-orange hover:text-orange-light text-sm mb-4 inline-flex items-center gap-1"
           >
-            ← Torna al Blog
+            ← Torna alle News
           </Link>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4">
             {post.title}

@@ -53,7 +53,7 @@ export default function Stats({
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className={isNavy ? "text-white" : "text-orange"}>
+            <div className={isNavy ? "text-orange" : "text-orange"}>
               <AnimatedNumber value={stat.number} suffix={stat.suffix} />
             </div>
             <p

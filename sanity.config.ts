@@ -29,7 +29,7 @@ export default defineConfig({
             S.divider(),
             S.documentTypeListItem("page").title("Pagine"),
             S.documentTypeListItem("service").title("Servizi"),
-            S.documentTypeListItem("post").title("Blog"),
+            S.documentTypeListItem("post").title("News"),
             S.documentTypeListItem("teamMember").title("Professionisti"),
             S.documentTypeListItem("faq").title("FAQ"),
           ]),

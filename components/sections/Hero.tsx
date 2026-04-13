@@ -34,7 +34,7 @@ export default function Hero({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-blue-dark/75" />
+          <div className="absolute inset-0 bg-black/70" />
         </>
       )}
 

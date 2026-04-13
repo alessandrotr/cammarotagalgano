@@ -11,7 +11,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const reservedSlugs = ["servizi", "professionisti", "chi-siamo", "blog", "contatti"];
+const reservedSlugs = ["servizi", "professionisti", "chi-siamo", "news", "contatti"];
 
 export async function generateStaticParams() {
   const slugs = await sanityFetch<string[]>({

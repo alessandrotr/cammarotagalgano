@@ -8,7 +8,7 @@ import { formatDate } from "@/lib/utils";
 import type { Post } from "@/types/sanity";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "News",
   description:
     "Articoli, approfondimenti e novità fiscali dallo Studio Associato Cammarota Galgano.",
 };
@@ -24,7 +24,7 @@ export default async function BlogPage() {
       <section className="bg-blue-dark pt-32 pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white">
-            Blog & Risorse
+            News
           </h1>
           <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
             Approfondimenti, novità fiscali e guide utili per aziende e professionisti
@@ -39,7 +39,7 @@ export default async function BlogPage() {
               {posts.map((post) => (
                 <Link
                   key={post._id}
-                  href={`/blog/${post.slug.current}`}
+                  href={`/news/${post.slug.current}`}
                   className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   {post.mainImage && (
