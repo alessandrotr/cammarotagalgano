@@ -45,15 +45,24 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <span
-              className={cn(
-                "text-lg font-bold tracking-tight transition-colors",
-                scrolled ? "text-blue-dark" : "text-white"
-              )}
-            >
-              CAMMAROTA
-              <span className="text-orange"> GALGANO</span>
-            </span>
+            <div className="flex flex-col">
+              <span
+                className={cn(
+                  "text-lg font-bold tracking-tight transition-colors",
+                  scrolled ? "text-blue-dark" : "text-white"
+                )}
+              >
+                CAMMAROTA GALGANO
+              </span>
+              <span
+                className={cn(
+                  "text-[9px] font-medium tracking-[0.2em] uppercase self-end transition-colors -mt-0.5",
+                  scrolled ? "text-text-light" : "text-white/50"
+                )}
+              >
+                since 1992
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -65,11 +74,12 @@ export default function Header() {
                 className={cn(
                   "text-sm font-medium transition-colors relative",
                   pathname === link.href
-                    ? "text-orange"
+                    ? scrolled ? "text-orange" : "text-white font-semibold"
                     : scrolled
                     ? "text-text-secondary hover:text-blue-dark"
                     : "text-white/80 hover:text-white",
-                  "after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-orange after:transition-all hover:after:w-full",
+                  "after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all hover:after:w-full",
+                  scrolled ? "after:bg-orange" : "after:bg-white",
                   pathname === link.href && "after:w-full"
                 )}
               >

@@ -34,7 +34,7 @@ export default defineType({
       options: {
         list: [
           { title: "Blu Scuro", value: "navy" },
-          { title: "Arancione", value: "orange" },
+          { title: "Nero", value: "dark" },
           { title: "Bianco", value: "white" },
         ],
       },

@@ -9,7 +9,7 @@ export default function CTA({
   buttonLink,
   backgroundColor = "navy",
 }: CtaSection) {
-  const bg = backgroundColor === "orange" ? "navy" : backgroundColor === "white" ? "cream" : "navy";
+  const bg = backgroundColor === "dark" ? "navy" : backgroundColor === "white" ? "cream" : "navy";
   const isLight = backgroundColor === "white";
 
   return (
@@ -35,7 +35,7 @@ export default function CTA({
           <div className="mt-8">
             <Button
               href={buttonLink}
-              variant={isLight ? "primary" : "primary"}
+              variant={isLight ? "primary" : "outline-light"}
               size="lg"
             >
               {buttonText}

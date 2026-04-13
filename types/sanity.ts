@@ -86,7 +86,7 @@ export interface CtaSection {
   body?: string;
   buttonText?: string;
   buttonLink?: string;
-  backgroundColor?: "navy" | "orange" | "white";
+  backgroundColor?: "navy" | "dark" | "white";
 }
 
 export interface ContactSectionType {
