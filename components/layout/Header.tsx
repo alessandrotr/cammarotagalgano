@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -85,9 +84,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button href="/contatti" variant={scrolled ? "primary" : "outline-light"} size="sm">
-              Richiedi Consulenza
-            </Button>
           </nav>
 
           {/* Mobile menu button */}
@@ -144,9 +140,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Button href="/contatti" variant="primary" size="md" className="w-full mt-4">
-            Richiedi Consulenza
-          </Button>
         </nav>
       </div>
     </header>
