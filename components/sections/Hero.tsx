@@ -44,7 +44,7 @@ export default function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className={cn(
-            "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight",
+            "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight",
             isDark ? "text-white" : "text-blue-dark"
           )}
         >
@@ -57,7 +57,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className={cn(
-              "mt-6 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed",
+              "mt-4 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed",
               isDark ? "text-gray-300" : "text-text-secondary"
             )}
           >
